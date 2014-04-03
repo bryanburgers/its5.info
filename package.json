@@ -1,0 +1,23 @@
+{
+  "name": "its5",
+  "version": "0.0.0",
+  "description": "It's five o'clock somewhere",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "Bryan Burgers <bryan@burgers.io> (http://burgers.io)",
+  "license": "MIT",
+  "dependencies": {
+    "connect": "^2.14.3",
+    "express": "^3.5.1",
+    "moment-timezone": "0.0.3",
+    "mustache-express": "^1.0.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.4",
+    "mocha": "^1.18.2",
+    "should": "^3.2.0"
+  }
+}
