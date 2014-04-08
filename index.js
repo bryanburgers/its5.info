@@ -25,18 +25,17 @@ app.use(connect.compress());
 app.use(express.errorHandler());
 //app.use(express.bodyParser());
 
-app.get('/', function(req, res) {
+function renderTime(time, res) {
 	var data = {};
 	data.zones = [];
 
-	var now = moment();
-	var zones = five(now);
+	var zones = five(time);
 	zones.buckets.forEach(function(bucket) {
 		bucket.zones.forEach(function(zone) {
 
 			zone.time = {
-				'human': now.tz(zone.designator).format('h:mm a'),
-				'iso': now.tz(zone.designator).format('YYYY[-]MM[-]DD[T]HH[:]MMZ')
+				'human': time.tz(zone.designator).format('h:mm a'),
+				'iso': time.tz(zone.designator).format('YYYY[-]MM[-]DD[T]HH[:]MMZ')
 			};
 
 			// If the zone doesn't have a location, use its designator.
@@ -49,63 +48,24 @@ app.get('/', function(req, res) {
 	});
 
 	res.render('index', data);
+}
+
+app.get('/', function(req, res) {
+	return renderTime(moment(), res);
+});
+
+app.get('/t/:time', function(req, res, next) {
+	var t = req.params.time;
+	var time = moment(t);
+
+	if (!time.isValid()) {
+		return next();
+	}
+
+	renderTime(time, res);
 });
 
 var port = process.env.PORT || 5000;
 app.listen(port, function() {
 	console.log("Listening on port " + port);
 });
-
-
-/*
-var moment = require('moment-timezone');
-var zones = moment.tz.zones();
-
-function f() {
-	var m = moment();
-	var locations = [];
-	zones.forEach(function(zone) {
-		var mtz = m.tz(zone.displayName);
-
-		var t = parseInt(mtz.format('HHmm'));
-		if (1630 <= t && t < 1800) {
-			locations.push([mtz.format('YYYY-MM-DD[T]HH:mm'), zone]);
-		}
-	});
-
-	locations.sort(function(a, b) {
-		var at = a[0];
-		var bt = b[0];
-		if (at < bt) {
-			return -1;
-		}
-		if (at > bt) {
-			return 1;
-		}
-		if (at === bt) {
-			var atz = a[1];
-			var btz = b[1];
-
-			if (atz < btz) {
-				return -1;
-			}
-			if (atz > btz) {
-				return 1;
-			}
-			return 0;
-		}
-	});
-
-	locations.forEach(function(thing) {
-		var zone = thing[1];
-		console.log(m.tz(zone.displayName).format('h:mm[pm]') + ' ' + zone.displayName);
-	});
-
-	console.log();
-}
-
-setInterval(f, 30000);
-f();
-
-
-*/
