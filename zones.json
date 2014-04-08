@@ -298,7 +298,9 @@
 	"Atlantic/Azores": null,
 	"Atlantic/Bermuda": null,
 	"Atlantic/Canary": null,
-	"Atlantic/Cape_Verde": null,
+	"Atlantic/Cape_Verde": {
+		"location": "Cape Verde"
+		},
 	"Atlantic/Faroe": null,
 	"Atlantic/Madeira": null,
 	"Atlantic/Reykjavik": null,
