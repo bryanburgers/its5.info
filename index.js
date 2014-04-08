@@ -6,6 +6,8 @@ var five = require('./five');
 var moment = require('moment-timezone');
 var mustacheExpress = require('mustache-express');
 
+var zoneNames = require('./zones.json');
+
 var app = express(express.logger());
 
 // Set the mustache template engine for .mustache files.
@@ -31,9 +33,20 @@ app.get('/', function(req, res) {
 	var zones = five(now);
 	zones.forEach(function(bucket) {
 		bucket.zones.forEach(function(zoneName) {
+
+			var zoneObj = zoneNames[zoneName];
+			if (zoneObj === undefined || zoneObj === false) {
+				return;
+			}
+
+			var name = zoneName;
+			if (zoneObj !== null && zoneObj.location) {
+				name = zoneObj.location;
+			}
+
 			var zone = {
 				'time': now.tz(zoneName).format('h:mm a'),
-				'designator': zoneName
+				'name': name
 			};
 			data.zones.push(zone);
 		});
