@@ -31,27 +31,19 @@ app.get('/', function(req, res) {
 
 	var now = moment();
 	var zones = five(now);
-	zones.forEach(function(bucket) {
-		bucket.zones.forEach(function(tzDesignator) {
+	zones.buckets.forEach(function(bucket) {
+		bucket.zones.forEach(function(zone) {
 
-			var zoneObj = zoneNames[tzDesignator];
-			if (zoneObj === undefined || zoneObj === false) {
-				return;
-			}
-
-			var name = tzDesignator;
-			if (zoneObj !== null && zoneObj.location) {
-				name = zoneObj.location;
-			}
-
-			var zone = {
-				'time': {
-					'human': now.tz(tzDesignator).format('h:mm a'),
-					'iso': now.tz(tzDesignator).format('YYYY[-]MM[-]DD[T]HH[:]MMZ')
-				},
-				'designator': tzDesignator,
-				'name': name
+			zone.time = {
+				'human': now.tz(zone.designator).format('h:mm a'),
+				'iso': now.tz(zone.designator).format('YYYY[-]MM[-]DD[T]HH[:]MMZ')
 			};
+
+			// If the zone doesn't have a location, use its designator.
+			if (!zone.location) {
+				zone.location = zone.designator;
+			}
+
 			data.zones.push(zone);
 		});
 	});

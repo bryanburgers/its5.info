@@ -1,12 +1,15 @@
 "use strict";
 
+var zoneInfo = require('./zones.json');
 var moment = require('moment-timezone');
 
 function five(instant) {
 	instant = instant || moment();
 
 	var zones = moment.tz.zones();
-	var ret = [];
+	var ret = {
+		buckets: []
+	};
 
 	var locations = [];
 	zones.forEach(function(zone) {
@@ -49,9 +52,28 @@ function five(instant) {
 				time: thing[0],
 				zones: []
 			};
-			ret.push(lastTimeBucket);
+			ret.buckets.push(lastTimeBucket);
 		}
-		var zone = thing[1];
+		var designator = thing[1];
+
+		var zone = {
+			designator: designator
+		};
+
+		var zoneInfoEntry = zoneInfo[designator];
+		if (zoneInfoEntry === false) {
+			// If it's false, we don't want it.
+			return;
+		}
+
+		if (zoneInfoEntry === null) {
+			// If it's null, then there is no name.
+		}
+
+		if (zoneInfoEntry !== null && zoneInfoEntry.location) {
+			zone.location = zoneInfoEntry.location;
+		}
+
 		lastTimeBucket.zones.push(zone);
 	});
 
