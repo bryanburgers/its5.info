@@ -32,20 +32,24 @@ app.get('/', function(req, res) {
 	var now = moment();
 	var zones = five(now);
 	zones.forEach(function(bucket) {
-		bucket.zones.forEach(function(zoneName) {
+		bucket.zones.forEach(function(tzDesignator) {
 
-			var zoneObj = zoneNames[zoneName];
+			var zoneObj = zoneNames[tzDesignator];
 			if (zoneObj === undefined || zoneObj === false) {
 				return;
 			}
 
-			var name = zoneName;
+			var name = tzDesignator;
 			if (zoneObj !== null && zoneObj.location) {
 				name = zoneObj.location;
 			}
 
 			var zone = {
-				'time': now.tz(zoneName).format('h:mm a'),
+				'time': {
+					'human': now.tz(tzDesignator).format('h:mm a'),
+					'iso': now.tz(tzDesignator).format('YYYY[-]MM[-]DD[T]HH[:]MMZ')
+				},
+				'designator': tzDesignator,
 				'name': name
 			};
 			data.zones.push(zone);
