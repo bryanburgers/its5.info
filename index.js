@@ -35,7 +35,7 @@ function renderTime(time, res) {
 
 			zone.time = {
 				'human': time.tz(zone.designator).format('h:mm a'),
-				'iso': time.tz(zone.designator).format('YYYY[-]MM[-]DD[T]HH[:]MMZ')
+				'iso': time.tz(zone.designator).format('YYYY[-]MM[-]DD[T]HH[:]mmZ')
 			};
 
 			// If the zone doesn't have a location, use its designator.
