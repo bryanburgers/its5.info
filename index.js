@@ -21,7 +21,7 @@ app.set('views', __dirname + '/views');
 var oneDay = 24 * 60 * 60;
 var oneMonth = 30 * oneDay;
 app.use(connect.compress());
-//app.use('/assets', express['static'](__dirname + '/assets', { maxAge: oneMonth }));
+app.use('/js', express['static'](__dirname + '/public/js', { maxAge: oneMonth }));
 app.use(express.errorHandler());
 //app.use(express.bodyParser());
 
