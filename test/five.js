@@ -91,6 +91,21 @@ describe('five', function() {
 		assert(result.buckets.length > 0, 'At least one entry should be returned, no matter what time the tests are run.');
 	});
 
+	it('should have a bucket with an offset (5:00 pm CDT)', function() {
+		var m = moment('2014-04-02T17:00:00-0500');
+		var result = five(m);
+		result.should.have.property('buckets').instanceOf(Array);
+		var bucket = result.buckets[0];
+
+		// The representative designator exists
+		bucket.should.have.property('offset');
+
+		// The representative designator yields the same time as any zone within the bucket.
+		m.clone().zone(bucket.offset).format().should.eql(m.tz(bucket.zones[0].designator).format());
+		m.clone().zone(bucket.offset).format().should.eql(m.tz(bucket.zones[1].designator).format());
+		m.clone().zone(bucket.offset).format().should.eql(m.tz(bucket.zones[bucket.zones.length - 1].designator).format());
+	});
+
 	it.skip('at any given point on December 21, there is at least one timezone where it is 5:00 PM', function() {
 		var prefix = '2014-12-21T';
 		for (var h = 0; h < 24; h++) {

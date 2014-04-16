@@ -26,11 +26,14 @@ app.use(express.errorHandler());
 //app.use(express.bodyParser());
 
 function renderTime(time, res) {
-	var data = {};
-	data.zones = [];
+	var data = five(time);
+	data.buckets.forEach(function(bucket) {
 
-	var zones = five(time);
-	zones.buckets.forEach(function(bucket) {
+		bucket.time = {
+			'human': time.zone(bucket.offset).format('h:mm a'),
+			'iso': time.zone(bucket.offset).format('YYYY[-]MM[-]DD[T]HH[:]mmZ')
+		};
+
 		bucket.zones.forEach(function(zone) {
 
 			zone.time = {
@@ -42,8 +45,6 @@ function renderTime(time, res) {
 			if (!zone.location) {
 				zone.location = zone.designator;
 			}
-
-			data.zones.push(zone);
 		});
 	});
 

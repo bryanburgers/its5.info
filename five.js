@@ -47,14 +47,16 @@ function five(instant) {
 	var lastTimeBucket = null;
 
 	locations.forEach(function(thing) {
+		var designator = thing[1];
+
 		if (lastTimeBucket === null || lastTimeBucket.time !== thing[0]) {
 			lastTimeBucket = {
 				time: thing[0],
+				offset: instant.tz(designator).format('Z'),
 				zones: []
 			};
 			ret.buckets.push(lastTimeBucket);
 		}
-		var designator = thing[1];
 
 		var zone = {
 			designator: designator

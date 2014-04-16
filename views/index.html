@@ -15,23 +15,21 @@
 </head>
 <body>
 	<h1>It's 5 o'clock somewhere</h1>
-	<table>
-		<caption>Locations where it's already 5:00 PM</caption>
-		<thead>
-			<tr>
-				<th>Time</th>
-				<th>Location</th>
-			</tr>
-		</thead>
-		<tbody>
+
+	{{#buckets}}
+	<section class="bucket" data-offset="{{ offset }}">
+		<header>
+			<h2><time datetime="{{ time.iso }}">{{ time.human }}</time></h2>
+		</header>
+		<div class="bucketcontent">
+			<ul>
 			{{#zones}}
-			<tr>
-				<td><time datetime="{{ time.iso }}" data-designator="{{ designator }}">{{ time.human }}</time></td>
-				<td>{{ location }}</td>
-			</tr>
+				<li>{{ location }}</li>
 			{{/zones}}
-		</tbody>
-	</table>
+			</ul>
+		</div>
+	</section>
+	{{/buckets}}
 
 	<script src="/js/somewhere.js"></script>
 </body>
