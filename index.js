@@ -25,7 +25,7 @@ app.use('/js', express['static'](__dirname + '/public/js', { maxAge: oneMonth })
 app.use(express.errorHandler());
 //app.use(express.bodyParser());
 
-function renderTime(time, res) {
+function getBuckets(time) {
 	var data = five(time);
 	data.buckets.forEach(function(bucket) {
 
@@ -48,11 +48,16 @@ function renderTime(time, res) {
 		});
 	});
 
-	res.render('index', data);
+	return data.buckets;
 }
 
 app.get('/', function(req, res) {
-	return renderTime(moment(), res);
+	var data = {
+		buckets: getBuckets(moment()),
+		live: true
+	}
+
+	res.render('index', data);
 });
 
 app.get('/t/:time', function(req, res, next) {
@@ -63,7 +68,12 @@ app.get('/t/:time', function(req, res, next) {
 		return next();
 	}
 
-	renderTime(time, res);
+	var data = {
+		buckets: getBuckets(time),
+		live: false
+	};
+
+	res.render('index', data);
 });
 
 var port = process.env.PORT || 5000;
