@@ -11,12 +11,23 @@ module.exports = function(grunt) {
 					'public/js/somewhere.js': ['client.js'],
 				}
 			}
+		},
+		watch: {
+			options: {
+				livereload: true,
+			},
+			js: {
+				files: ['client.js'],
+				tasks: ['browserify']
+			}
 		}
 	});
 
 	// Load the plugin that provides the "uglify" task.
 	grunt.loadNpmTasks('grunt-browserify');
+	grunt.loadNpmTasks('grunt-contrib-watch');
 
 	// Default task(s).
 	grunt.registerTask('default', ['browserify']);
+	grunt.registerTask('dev', ['watch']);
 };
