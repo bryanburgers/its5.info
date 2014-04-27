@@ -3,23 +3,15 @@
 <head>
 	<title>It's 5 o'clock somewhere</title>
 	<meta name="viewport" content="width=device-width">
-	<style>
-		caption {
-			display: none;
-		}
-		td, th {
-			text-align: left;
-			padding-right: 0.5em;
-		}
-	</style>
+	<link rel="stylesheet" href="/assets/css/style.css">
 </head>
 <body {{#live}}data-live="live"{{/live}}>
-	<h1>It's 5 o'clock somewhere</h1>
+	<h1><span class="a">It's</span> <span class="b">5 o'clock</span> <span class="c">somewhere</span></h1>
 
 	{{#buckets}}
 	<section class="bucket" data-offset="{{ offset }}">
 		<header>
-			<h2><time datetime="{{ time.iso }}">{{ time.human }}</time></h2>
+			<h2>It's <time datetime="{{ time.iso }}">{{ time.human }}</time> in&hellip;</h2>
 		</header>
 		<div class="bucketcontent">
 			<ul>
@@ -31,6 +23,6 @@
 	</section>
 	{{/buckets}}
 
-	<script src="/js/somewhere.js"></script>
+	<script src="/assets/js/somewhere.js"></script>
 </body>
 </html>

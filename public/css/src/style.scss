@@ -1,0 +1,76 @@
+*, *:before, *:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+@font-face {
+	font-family: 'Densia Sans';
+	src: url(/assets/fonts/densia-sans.otf);
+	font-style: regular;
+	font-weight: normal;
+}
+
+@font-face {
+	font-family: 'Streetwear';
+	src: url(/assets/fonts/streetwear.otf);
+	font-style: regular;
+	font-weight: normal;
+}
+
+html {
+	font-family: 'Densia Sans', sans-serif;
+	font-size: 180%;
+}
+
+h1 {
+	font-weight: normal;
+	text-align: center;
+	line-height: 1em;
+	margin-top: 0.25em;
+
+	.a {
+		font-size: 60%;
+		text-transform: lowercase;
+
+		&:before, &:after {
+			content: " — ";
+		}
+	}
+	.b {
+		font-family: 'Streetwear', sans-serif;
+		text-shadow: 1px 1px 0 white, 2px 2px 0 black;
+		display: block;
+	}
+	.c {
+		display: block;
+	}
+}
+
+.bucket {
+	margin: 2em auto;
+	max-width: 20em;
+	text-align: center;
+
+	h2 {
+		margin-bottom: 0.5em;
+
+		font-size: 1.4em;
+		font-weight: normal;
+		text-transform: lowercase;
+
+		time {
+			font-family: 'Streetwear', sans-serif;
+			font-size: 0.8em;
+			text-shadow: 1px 1px 0 white, 2px 2px 0 black;
+			padding-right: 0.4em;
+		}
+	}
+
+	ul {
+		list-style-type: none;
+		margin-left: 0;
+		padding-left: 0;
+	}
+}
+

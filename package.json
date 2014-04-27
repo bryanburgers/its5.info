@@ -18,7 +18,9 @@
   "devDependencies": {
     "browserify": "^3.41.0",
     "grunt": "^0.4.4",
+    "grunt-autoprefixer": "^0.7.2",
     "grunt-browserify": "^2.0.5",
+    "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-watch": "^0.6.1",
     "mocha": "^1.18.2",
     "should": "^3.2.0"

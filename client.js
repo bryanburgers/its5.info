@@ -72,7 +72,9 @@ function generateBucketElement(bucket) {
 	header.appendChild(h2);
 
 	var time = document.createElement('time');
+	h2.appendChild(document.createTextNode("It's "));
 	h2.appendChild(time);
+	h2.appendChild(document.createTextNode(" in…"))
 	time.setAttribute('datetime', '');
 	time.textContent = '';
 
