@@ -10,11 +10,12 @@
   "author": "Bryan Burgers <bryan@burgers.io> (http://burgers.io)",
   "license": "MIT",
   "dependencies": {
+    "cli-color": "^0.3.2",
     "connect": "^2.14.3",
     "express": "^3.5.1",
+    "hashdirectory": "^0.1.0",
     "moment-timezone": "0.0.3",
-    "mustache-express": "^1.0.1",
-    "hashdirectory": "^0.1.0"
+    "mustache-express": "^1.0.1"
   },
   "devDependencies": {
     "browserify": "^3.41.0",
