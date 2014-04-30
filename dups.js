@@ -1,6 +1,8 @@
 "use strict";
 
+var clc = require('cli-color');
 var moment = require('moment-timezone');
+var zoneNames = require('./zones.json');
 
 if (process.argv.length < 3) {
 	console.log("For what timezone should we find duplicates?");
@@ -22,7 +24,17 @@ zones.forEach(function(zone) {
 	var info = getZoneInfoString(zone);
 
 	if (info == selectedZoneInfo) {
-		console.log(zone.displayName);
+		var z = zoneNames[zone.displayName];
+
+		if (z === false) {
+			console.log(clc.white(zone.displayName));
+		}
+		else if (z !== undefined && z !== null) {
+			console.log(clc.green(z.location) + ' (' + zone.displayName + ')');
+		}
+		else {
+			console.log(zone.displayName);
+		}
 	}
 });
 
