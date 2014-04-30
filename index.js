@@ -3,6 +3,7 @@
 var connect = require('connect');
 var express = require('express');
 var five = require('./five');
+var hashdirectory = require('hashdirectory');
 var moment = require('moment-timezone');
 var mustacheExpress = require('mustache-express');
 
@@ -16,6 +17,14 @@ app.engine('html', mustacheExpress());
 // Set .mustache as the default extension.
 app.set('view engine', 'html');
 app.set('views', __dirname + '/views');
+
+// Use this "asset version" to cache bust when we update any of the assets.
+var assetVersion = hashdirectory.sync(__dirname + '/public');
+var re = new RegExp('/' + assetVersion + '/');
+app.use('/assets', function(req, res, next) {
+	req.url = req.url.replace(re, '/');
+	next();
+});
 
 // Static stuffs
 var oneDay = 24 * 60 * 60;
@@ -54,6 +63,7 @@ function getBuckets(time) {
 app.get('/', function(req, res) {
 	var data = {
 		buckets: getBuckets(moment()),
+		assetVersion: assetVersion,
 		live: true
 	}
 
@@ -70,6 +80,7 @@ app.get('/t/:time', function(req, res, next) {
 
 	var data = {
 		buckets: getBuckets(time),
+		assetVersion: assetVersion,
 		live: false
 	};
 
