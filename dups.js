@@ -28,7 +28,7 @@ zones.forEach(function(zone) {
 		var z = zoneNames[zone.displayName];
 
 		if (z === false) {
-			console.log(clc.white(zone.displayName));
+			console.log(clc.blackBright(zone.displayName));
 		}
 		else if (z !== undefined && z !== null) {
 			console.log(clc.green(z.location) + ' (' + zone.displayName + ')');
