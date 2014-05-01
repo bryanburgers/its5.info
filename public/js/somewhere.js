@@ -113,7 +113,7 @@ if (document.body.getAttribute('data-live') !== null) {
 },{"./five":2,"moment-timezone":3}],2:[function(require,module,exports){
 "use strict";
 
-var zoneInfo = require('./zones.json');
+var zoneInfo = require('./zones');
 var moment = require('moment-timezone');
 
 function five(instant) {
@@ -197,7 +197,7 @@ function five(instant) {
 
 module.exports = five;
 
-},{"./zones.json":7,"moment-timezone":3}],3:[function(require,module,exports){
+},{"./zones":7,"moment-timezone":3}],3:[function(require,module,exports){
 module.exports = require("./moment-timezone");
 module.exports.tz.add(require('./moment-timezone.json'));
 
@@ -10684,7 +10684,7 @@ module.exports={
 }).call(this);
 
 },{}],7:[function(require,module,exports){
-module.exports={
+module.exports = {
 	"Africa/Abidjan": null,
 	"Africa/Accra": null,
 	"Africa/Addis_Ababa": null,

@@ -7,7 +7,7 @@ var hashdirectory = require('hashdirectory');
 var moment = require('moment-timezone');
 var mustacheExpress = require('mustache-express');
 
-var zoneNames = require('./zones.json');
+var zoneNames = require('./zones');
 
 var app = express(express.logger());
 

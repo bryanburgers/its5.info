@@ -1,4 +1,4 @@
-{
+module.exports = {
 	"Africa/Abidjan": null,
 	"Africa/Accra": null,
 	"Africa/Addis_Ababa": null,

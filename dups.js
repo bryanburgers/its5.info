@@ -2,7 +2,7 @@
 
 var clc = require('cli-color');
 var moment = require('moment-timezone');
-var zoneNames = require('./zones.json');
+var zoneNames = require('./zones');
 
 if (process.argv.length < 3) {
 	console.log("For what timezone should we find duplicates?");

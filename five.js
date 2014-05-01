@@ -1,6 +1,6 @@
 "use strict";
 
-var zoneInfo = require('./zones.json');
+var zoneInfo = require('./zones');
 var moment = require('moment-timezone');
 
 function five(instant) {
