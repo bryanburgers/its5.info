@@ -18,6 +18,7 @@ if (selectedZone.length == 0) {
 	process.exit(2);
 }
 selectedZone = selectedZone[0];
+console.log(clc.red(formatOffset(selectedZone)));
 var selectedZoneInfo = getZoneInfoString(selectedZone);
 
 zones.forEach(function(zone) {
@@ -43,4 +44,34 @@ function getZoneInfoString(zone) {
 	var ruleSetName = lastZone.ruleSet.name;
 	var offset = lastZone.offset.toString();
 	return ruleSetName + '/' + offset;
+}
+
+function formatOffset(zone) {
+	function pad(n, l) {
+		var s = n.toString();
+		while (s.length < l) {
+			s = '0' + s;
+		}
+		return s;
+	}
+
+	function formatOffsetNumber(n) {
+		var offsetIsNeg = n < 0;
+		var offsetSign = offsetIsNeg ? '-' : '+';
+		var offset = Math.abs(n);
+		var offsetHours = Math.floor(offset/60);
+		var offsetMinutes = offset - (offsetHours * 60);
+
+		return offsetSign + pad(offsetHours, 2) + ':' + pad(offsetMinutes, 2);
+	}
+
+	var lastZone = zone.zones[zone.zones.length - 1];
+	var hasDST = lastZone.ruleSet.name !== '-';
+
+	if (hasDST) {
+		return formatOffsetNumber(lastZone.offset) + ' / ' + formatOffsetNumber(lastZone.offset + 60);
+	}
+	else {
+		return formatOffsetNumber(lastZone.offset);
+	}
 }
