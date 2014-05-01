@@ -64,7 +64,8 @@ app.get('/', function(req, res) {
 	var data = {
 		buckets: getBuckets(moment()),
 		assetVersion: assetVersion,
-		live: true
+		live: true,
+		gaCode: process.env.GA_CODE
 	}
 
 	res.render('index', data);
@@ -81,7 +82,8 @@ app.get('/t/:time', function(req, res, next) {
 	var data = {
 		buckets: getBuckets(time),
 		assetVersion: assetVersion,
-		live: false
+		live: false,
+		gaCode: process.env.GA_CODE
 	};
 
 	res.render('index', data);
