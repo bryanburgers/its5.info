@@ -10685,65 +10685,185 @@ module.exports={
 
 },{}],7:[function(require,module,exports){
 module.exports = {
-	"Africa/Abidjan": null,
-	"Africa/Accra": null,
-	"Africa/Addis_Ababa": null,
-	"Africa/Algiers": null,
-	"Africa/Asmara": null,
-	"Africa/Bamako": null,
-	"Africa/Bangui": null,
-	"Africa/Banjul": null,
-	"Africa/Bissau": null,
-	"Africa/Blantyre": null,
-	"Africa/Brazzaville": null,
-	"Africa/Bujumbura": null,
-	"Africa/Cairo": null,
-	"Africa/Casablanca": null,
-	"Africa/Ceuta": null,
-	"Africa/Conakry": null,
-	"Africa/Dakar": null,
-	"Africa/Dar_es_Salaam": null,
-	"Africa/Djibouti": null,
-	"Africa/Douala": null,
-	"Africa/El_Aaiun": null,
-	"Africa/Freetown": null,
-	"Africa/Gaborone": null,
-	"Africa/Harare": null,
-	"Africa/Johannesburg": null,
-	"Africa/Juba": null,
-	"Africa/Kampala": null,
-	"Africa/Khartoum": null,
-	"Africa/Kigali": null,
-	"Africa/Kinshasa": null,
-	"Africa/Lagos": null,
-	"Africa/Libreville": null,
-	"Africa/Lome": null,
-	"Africa/Luanda": null,
-	"Africa/Lubumbashi": null,
-	"Africa/Lusaka": null,
-	"Africa/Malabo": null,
-	"Africa/Maputo": null,
-	"Africa/Maseru": null,
-	"Africa/Mbabane": null,
-	"Africa/Mogadishu": null,
-	"Africa/Monrovia": null,
-	"Africa/Nairobi": null,
-	"Africa/Ndjamena": null,
-	"Africa/Niamey": null,
-	"Africa/Nouakchott": null,
-	"Africa/Ouagadougou": null,
-	"Africa/Porto-Novo": null,
-	"Africa/Sao_Tome": null,
-	"Africa/Tripoli": null,
-	"Africa/Tunis": null,
-	"Africa/Windhoek": null,
+
+
+	// +03:00
+	"Africa/Addis_Ababa": {
+		"location": "Addis Ababa, Ethiopia"
+		},
+	"Africa/Asmara": {
+		"location": "Asmara, Eritrea"
+		},
+	"Africa/Dar_es_Salaam": {
+		"location": "Dar es Salaam, Tanzania"
+		},
+	"Africa/Djibouti": {
+		"location": "Djibouti, Djibouti"
+		},
+	"Africa/Juba": {
+		"location": "Juba, South Sudan"
+		},
+	"Africa/Kampala": {
+		"location": "Kampala, Uganda"
+		},
+	"Africa/Khartoum": {
+		"location": "Khartoum, Sudan"
+		},
+	"Africa/Mogadishu": {
+		"location": "Mogadishu, Somalia"
+		},
+	"Africa/Nairobi": {
+		"location": "Nairobi, Kenya"
+		},
+
+
+	// +02:00
+	"Africa/Blantyre": {
+		"location": "Blantyre, Malawi"
+		},
+	"Africa/Bujumbura": {
+		"location": "Bujumbura, Burundi"
+		},
+	"Africa/Gaborone": {
+		"location": "Gaborone, Botswana"
+		},
+	"Africa/Harare": {
+		"location": "Harare, Zimbabwe"
+		},
+	"Africa/Johannesburg": {
+		"location": "Johannesburg, South Africa"
+		},
+	"Africa/Kigali": {
+		"location": "Kigali, Rwanda"
+		},
+	"Africa/Lubumbashi": {
+		"location": "Lubumbashi, Democratic Republic of the Congo"
+		},
+	"Africa/Lusaka": {
+		"location": "Lusaka, Zambia"
+		},
+	"Africa/Maputo": {
+		"location": "Maputo, Mozambique"
+		},
+	"Africa/Maseru": {
+		"location": "Maseru, Lesotho"
+		},
+	"Africa/Mbabane": {
+		"location": "Mbabane, Swaziland"
+		},
+	"Africa/Tripoli": {
+		"location": "Tripoli, Libya"
+		},
+
+	// +02:00 / +03:00
+	"Africa/Cairo": {
+		"location": "Cairo, Egypt"
+		},
+
+
+	// +01:00
+	"Africa/Algiers": {
+		"location": "Algiers, Algeria"
+		},
+	"Africa/Bangui": {
+		"location": "Bangui, Central African Republic"
+		},
+	"Africa/Brazzaville": {
+		"location": "Brazzaville, Republic of the Congo"
+		},
+	"Africa/Douala": {
+		"location": "Douala, Cameroon"
+		},
+	"Africa/Kinshasa": {
+		"location": "Kinshasa, Democratic Republic of the Congo"
+		},
+	"Africa/Lagos": {
+		"location": "Lagos, Nigeria"
+		},
+	"Africa/Libreville": {
+		"location": "Libreville, Gabon"
+		},
+	"Africa/Luanda": {
+		"location": "Luanda, Angola"
+		},
+	"Africa/Malabo": {
+		"location": "Malabo, Equatorial Guinea"
+		},
+	"Africa/Ndjamena": {
+		"location": "N'Djamena, Chad"
+		},
+	"Africa/Niamey": {
+		"location": "Niamey, Niger"
+		},
+	"Africa/Porto-Novo": {
+		"location": "Porto-Novo, Benin"
+		},
+	"Africa/Tunis": {
+		"location": "Tunis, Tunisia"
+		},
+
+
+	// +01:00 / +02:00
+	"Africa/Ceuta": false, // dup: Europe/Madrid
+	"Africa/Windhoek": {
+		"location": "Windhoek, Namibia"
+		},
+
 
 	//  00:00
+	"Africa/Abidjan": {
+		"location": "Abidjan, Ivory Coast"
+		},
+	"Africa/Bamako": {
+		"location": "Bamako, Mali"
+		},
+	"Africa/Banjul": {
+		"location": "Banjul, the Gambia"
+		},
+	"Africa/Bissau": {
+		"location": "Bissau, Guinea-Bissau"
+		},
+	"Africa/Conakry": {
+		"location": "Conakry, Guinea"
+		},
+	"Africa/Dakar": {
+		"location": "Dakar, Senegal"
+		},
+	"Africa/El_Aaiun": {
+		"location": "El Aaiún, Western Sahara"
+		},
+	"Africa/Lome": {
+		"location": "Lomé, Togo"
+		},
 	"America/Danmarkshavn": {
 		"location": "Danmarkshavn, Greenland"
 		},
+	"Africa/Monrovia": {
+		"location": "Monrovia, Liberia"
+		},
+	"Africa/Nouakchott": {
+		"location": "Nouakchott, Mauritania"
+		},
+	"Africa/Ouagadougou": {
+		"location": "Ouagadougou, Burkina Faso"
+		},
+	"Africa/Sao_Tome": {
+		"location": "São Tomé, São Tomé and Príncipe"
+		},
 
-	// -01:00 /  0:00
+
+	//  00:00 / +01:00
+	"Africa/Accra": {
+		"location": "Accra, Ghana"
+		},
+	"Africa/Casablanca": {
+		"location": "Casablanca, Morocco"
+		},
+	"Africa/Freetown": {
+		"location": "Freetown, Liberia"
+		},
+
+	// -01:00 /  00:00
 	"America/Scoresbysund": {
 		"location": "Ittoqqortoormiit, Greenland"
 		},
