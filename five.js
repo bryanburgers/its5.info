@@ -1,7 +1,8 @@
 "use strict";
 
-var zoneInfo = require('./zones');
 var moment = require('moment-timezone');
+var shuffle = require('./shuffle');
+var zoneInfo = require('./zones');
 
 function five(instant) {
 	instant = instant || moment();
@@ -77,6 +78,20 @@ function five(instant) {
 		}
 
 		lastTimeBucket.zones.push(zone);
+	});
+
+	// Shuffle
+	ret.buckets.forEach(function(bucket) {
+		// OK, so this is a little bit tricky. The order of locations within a
+		// bucket should be randomized. However, it should stay consistent
+		// throughout the entire 5pm hour, because the javascript might be
+		// involved, so it should get the same result. So, use the
+		// Moment.valueOf of the 5:00:00 pm instant of a bucket (regardless of
+		// whether its 5:00pm or 5:37pm or 5:59:59pm) to seed a predictable
+		// random generator (Merseinne Twister).
+		var d = moment(bucket.time).zone(bucket.offset);
+		d.minutes(0).seconds(0).milliseconds(0);
+		bucket.zones = shuffle(bucket.zones, d.valueOf());
 	});
 
 	return ret;

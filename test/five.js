@@ -151,4 +151,13 @@ describe('five', function() {
 			}
 		}
 	});
+
+	it('returns the correct zones (5:00 pm PDT)', function() {
+		var result1 = five(moment('2014-04-02T17:00:00-0700'));
+		var result2 = five(moment('2014-04-02T17:59:59-0700'));
+
+		assert(result1.buckets[0].zones[0].designator === result2.buckets[0].zones[0].designator, 'Designators at position 0 should be equal');
+		assert(result1.buckets[0].zones[3].designator === result2.buckets[0].zones[3].designator, 'Designators at position 3 should be equal');
+		assert(result1.buckets[0].zones[5].designator === result2.buckets[0].zones[5].designator, 'Designators at position 5 should be equal');
+	});
 });

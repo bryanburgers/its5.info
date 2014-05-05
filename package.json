@@ -15,7 +15,8 @@
     "express": "^3.5.1",
     "hashdirectory": "^0.1.0",
     "moment-timezone": "0.0.3",
-    "mustache-express": "^1.0.1"
+    "mustache-express": "^1.0.1",
+    "random-js": "^1.0.3"
   },
   "devDependencies": {
     "browserify": "^3.41.0",
