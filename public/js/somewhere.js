@@ -10687,6 +10687,48 @@ module.exports={
 module.exports = {
 
 
+	// +12:00 / +13:00
+	"Antarctica/McMurdo": {
+		"location": "McMurdo Station, Antarctica"
+		},
+
+
+	// +11:00
+	"Antarctica/Macquarie": {
+		"location": "Macquarie Island, Tasmania, Australia"
+		},
+
+
+	// +10:00
+	"Antarctica/DumontDUrville": {
+		"location": "Dumont d'Urville Station, Antarctica"
+		},
+
+
+	// +08:00
+	"Antarctica/Casey": {
+		"location": "Casey Station, Antarctica"
+		},
+
+
+	// +07:00
+	"Antarctica/Davis": {
+		"location": "Davis Station, Antarctica"
+		},
+
+
+	// +06:00
+	"Antarctica/Vostok": {
+		"location": "Vostok Station, Antarctica"
+		},
+
+
+	// +05:00
+	"Antarctica/Mawson": {
+		"location": "Mawson Station, Antarctica"
+		},
+
+
 	// +03:00
 	"Africa/Addis_Ababa": {
 		"location": "Addis Ababa, Ethiopia"
@@ -10714,6 +10756,9 @@ module.exports = {
 		},
 	"Africa/Nairobi": {
 		"location": "Nairobi, Kenya"
+		},
+	"Antarctica/Syowa": {
+		"location": "Syowa Station, Antarctica"
 		},
 
 
@@ -10910,6 +10955,10 @@ module.exports = {
 	"America/Santarem": {
 		"location": "Santarém, Pará, Brazil"
 		},
+	// -03:00
+	"Antarctica/Rothera": {
+		"location": "Rothera Station, Antarctica"
+		},
 
 
 	// -03:00 / -02:00
@@ -11046,6 +11095,9 @@ module.exports = {
 		},
 	"America/Thule": {
 		"location": "Qaanaaq, Greenland"
+		},
+	"Antarctica/Palmer": {
+		"location": "Palmer Station, Antarctica"
 		},
 
 
@@ -11238,19 +11290,6 @@ module.exports = {
 
 
 
-
-
-
-	"Antarctica/Casey": null,
-	"Antarctica/Davis": null,
-	"Antarctica/DumontDUrville": null,
-	"Antarctica/Macquarie": null,
-	"Antarctica/Mawson": null,
-	"Antarctica/McMurdo": null,
-	"Antarctica/Palmer": null,
-	"Antarctica/Rothera": null,
-	"Antarctica/Syowa": null,
-	"Antarctica/Vostok": null,
 
 	"Asia/Aden": null,
 	"Asia/Almaty": null,
