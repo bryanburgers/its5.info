@@ -11390,9 +11390,28 @@ module.exports = {
 		},
 
 
+	// +12:00
+	"Asia/Anadyr": {
+		"location": "Anadyr, Russia"
+		},
+	"Asia/Kamchatka": {
+		"location": "Kamchatka, Russia"
+		},
+	"Asia/Magadan": {
+		"location": "Magadan, Russia"
+		},
+
+
 	// +11:00
 	"Antarctica/Macquarie": {
 		"location": "Macquarie Island, Tasmania, Australia"
+		},
+	"Asia/Sakhalin": {
+		"location": "Yuzhno-Sakhalinsk, Russa"
+		},
+	"Asia/Ust-Nera": false, // dup: Asia/Vladivostok
+	"Asia/Vladivostok": {
+		"location": "Vladivostok, Russia"
 		},
 
 
@@ -11400,11 +11419,88 @@ module.exports = {
 	"Antarctica/DumontDUrville": {
 		"location": "Dumont d'Urville Station, Antarctica"
 		},
+	"Asia/Khandyga": {
+		"location": "Khandyga, Russia"
+		},
+	"Asia/Yakutsk": {
+		"location": "Yakutsk, Russia"
+		},
+
+
+	// +09:00
+	"Asia/Dili": {
+		"location": "Dili, East Timor"
+		},
+	"Asia/Irkutsk": {
+		"location": "Irkutsk, Russia"
+		},
+	"Asia/Jayapura": {
+		"location": "Jayapura, Indonesia"
+		},
+	"Asia/Pyongyang": {
+		"location": "Pyongyang, North Korea"
+		},
+	"Asia/Tokyo": {
+		"location": "Tokyo, Japan"
+		},
+
+
+	// +09:00 / +10:00
+	"Asia/Seoul": {
+		"location": "Seoul, South Korea"
+		},
+
+
+
 
 
 	// +08:00
 	"Antarctica/Casey": {
 		"location": "Casey Station, Antarctica"
+		},
+		"Asia/Brunei": {
+		"location": "Bandar Seri Begawan, Brunei"
+		},
+	"Asia/Choibalsan": {
+		"location": "Choibalsan, Mongolia"
+		},
+	"Asia/Krasnoyarsk": {
+		"location": "Krasnoyarsk, Russia"
+		},
+	"Asia/Kuala_Lumpur": {
+		"location": "Kuala Lumpur, Malaysia"
+		},
+	"Asia/Kuching": false, // dup: Asia/Kuala_Lumpur
+	"Asia/Makassar": {
+		"location": "Makassar, Indonesia"
+		},
+	"Asia/Singapore": {
+		"location": "Singapore"
+		},
+	"Asia/Ulaanbaatar": {
+		"location": "Ulan Bator, Mongolia"
+		},
+	"Asia/Urumqi": false, // dup: Asia/Shanghai
+
+
+	// +08:00 / +09:00
+	"Asia/Chongqing": false, // dup: Asia/Shanghai
+	"Asia/Harbin": false, // dup: Asia/Shanghai
+	"Asia/Hong_Kong": {
+		"location": "Hong Kong"
+		},
+	"Asia/Kashgar": false, // dup: Asia/Shanghai
+	"Asia/Macau": {
+		"location": "Macau"
+		},
+	"Asia/Manila": {
+		"location": "Manila, Philippines"
+		},
+	"Asia/Shanghai": {
+		"location": "Beijing, China"
+		},
+	"Asia/Taipei": {
+		"location": "Taiwan"
 		},
 
 
@@ -11412,17 +11508,136 @@ module.exports = {
 	"Antarctica/Davis": {
 		"location": "Davis Station, Antarctica"
 		},
+	"Asia/Bangkok": {
+		"location": "Bangkok, Thailand"
+		},
+	"Asia/Ho_Chi_Minh": {
+		"location": "Ho Chi Minh, Vietnam"
+		},
+	"Asia/Jakarta": {
+		"location": "Jakarta, Indonesia"
+		},
+	"Asia/Novokuznetsk": false, // dup: Asia/Novosibirsk
+	"Asia/Novosibirsk": {
+		"location": "Novosibirsk, Russia"
+		},
+	"Asia/Omsk": false, // dup: Asia/Novosibirsk
+	"Asia/Phnom_Penh": {
+		"location": "Phnom Penh, Cambodia"
+		},
+	"Asia/Pontianak": false, // dup: Asia/Jakarta
+	"Asia/Vientiane": {
+		"location": "Vientiane, Laos"
+		},
+
+
+	// +07:00 / +08:00
+	"Asia/Hovd": {
+		"location": "Khovd, Mongolia"
+		},
+
+
+	// +06:30
+	"Asia/Rangoon": {
+		"location": "Yangon, Myanmar"
+		},
 
 
 	// +06:00
 	"Antarctica/Vostok": {
 		"location": "Vostok Station, Antarctica"
 		},
+	"Asia/Almaty": {
+		"location": "Almaty, Kazakhstan"
+		},
+	"Asia/Bishkek": {
+		"location": "Bishkek, Kyrgyzstan"
+		},
+	"Asia/Dhaka": {
+		"location": "Dhaka, Bangladesh"
+		},
+	"Asia/Qyzylorda": {
+		"location": "Kyzylorda, Kazakhstan"
+		},
+	"Asia/Thimphu": {
+		"location": "Thimphu, Bhutan"
+		},
+	"Asia/Yekaterinburg": {
+		"location": "Yekaterinburg, Russia"
+		},
+
+
+	// +05:45
+	"Asia/Kathmandu": {
+		"location": "Kathmandu, Nepal"
+		},
+
+
+	// +05:30
+	"Asia/Colombo": {
+		"location": "Colombo, Sri Lanka"
+		},
+	"Asia/Kolkata": {
+		"location": "Kolkata, India"
+		},
 
 
 	// +05:00
 	"Antarctica/Mawson": {
 		"location": "Mawson Station, Antarctica"
+		},
+	"Asia/Aqtau": false, // dup: Asia/Aqtobe
+	"Asia/Aqtobe": {
+		"location": "Aktobe, Kazakhstan"},
+	"Asia/Ashgabat": {
+		"location": "Ashgabat, Turkmenistan"
+		},
+	"Asia/Dushanbe": {
+		"location": "Dushanbe, Tajikistan"
+		},
+	"Asia/Karachi": {
+		"location": "Karachi, Pakistan"
+		},
+	"Asia/Oral": {
+		"location": "Oral, Kazakhstan"
+		},
+	"Asia/Samarkand": {
+		"location": "Samarkand, Uzbekistan"
+		},
+	"Asia/Tashkent": {
+		"location": "Tashkent, Uzbekistan"
+		},
+
+
+	// +04:30
+	"Asia/Kabul": {
+		"location": "Kabul, Afghanistan"
+		},
+
+	// +04:00
+	"Asia/Dubai": {
+		"location": "Dubai, United Arab Emirates"
+		},
+	"Asia/Muscat": {
+		"location": "Muscat, Oman"
+		},
+	"Asia/Tbilisi": {
+		"location": "Tbilisi, Georgia"
+		},
+	"Asia/Yerevan": {
+		"location": "Yerevan, Armenia"
+		},
+
+
+	// +04:00 / +05:00
+	"Asia/Baku": {
+		"location": "Baku, Azerbaijan"
+		},
+
+
+	// +03:30 / +04:30
+	"Asia/Tehran": {
+		"location": "Tehran, Iran"
 		},
 
 
@@ -11456,6 +11671,27 @@ module.exports = {
 		},
 	"Antarctica/Syowa": {
 		"location": "Syowa Station, Antarctica"
+		},
+	"Asia/Aden": {
+		"location": "Aden, Yemen"
+		},
+	"Asia/Bahrain": {
+		"location": "Manama, Bahrain"
+		},
+	"Asia/Kuwait": {
+		"location": "Kuwait City, Kuwait"
+		},
+	"Asia/Qatar": {
+		"location": "Doha, Qatar"
+		},
+	"Asia/Riyadh": {
+		"location": "Riyadh, Saudi Arabia"
+		},
+
+
+	// +03:00 / +04:00
+	"Asia/Baghdad": {
+		"location": "Baghdad, Iraq"
 		},
 
 
@@ -11496,10 +11732,32 @@ module.exports = {
 	"Africa/Tripoli": {
 		"location": "Tripoli, Libya"
 		},
+	"Asia/Amman": {
+		"location": "Amman, Jordan"
+		},
+
 
 	// +02:00 / +03:00
 	"Africa/Cairo": {
 		"location": "Cairo, Egypt"
+		},
+	"Asia/Beirut": {
+		"location": "Beirut, Lebanon"
+		},
+	"Asia/Damascus": {
+		"location": "Damascus, Syria"
+		},
+	"Asia/Gaza": {
+		"location": "Gaza"
+		},
+	"Asia/Hebron": {
+		"location": "Hebron"
+		},
+	"Asia/Jerusalem": {
+		"location": "Jerusalem"
+		},
+	"Asia/Nicosia": {
+		"location": "Nicosia, Cyprus"
 		},
 
 
@@ -11986,95 +12244,6 @@ module.exports = {
 		},
 
 
-
-
-	"Asia/Aden": null,
-	"Asia/Almaty": null,
-	"Asia/Amman": null,
-	"Asia/Anadyr": null,
-	"Asia/Aqtau": null,
-	"Asia/Aqtobe": null,
-	"Asia/Ashgabat": null,
-	"Asia/Baghdad": null,
-	"Asia/Bahrain": null,
-	"Asia/Baku": null,
-	"Asia/Bangkok": null,
-	"Asia/Beirut": null,
-	"Asia/Bishkek": null,
-	"Asia/Brunei": null,
-	"Asia/Choibalsan": null,
-	"Asia/Chongqing": false,
-	"Asia/Colombo": null,
-	"Asia/Damascus": null,
-	"Asia/Dhaka": null,
-	"Asia/Dili": null,
-	"Asia/Dubai": null,
-	"Asia/Dushanbe": null,
-	"Asia/Gaza": null,
-	"Asia/Harbin": false,
-	"Asia/Hebron": null,
-	"Asia/Ho_Chi_Minh": null,
-	"Asia/Hong_Kong": {
-		"location": "Hong Kong"
-		},
-	"Asia/Hovd": null,
-	"Asia/Irkutsk": null,
-	"Asia/Jakarta": null,
-	"Asia/Jayapura": null,
-	"Asia/Jerusalem": null,
-	"Asia/Kabul": null,
-	"Asia/Kamchatka": null,
-	"Asia/Karachi": null,
-	"Asia/Kashgar": false,
-	"Asia/Kathmandu": null,
-	"Asia/Khandyga": null,
-	"Asia/Kolkata": null,
-	"Asia/Krasnoyarsk": null,
-	"Asia/Kuala_Lumpur": null,
-	"Asia/Kuching": null,
-	"Asia/Kuwait": null,
-	"Asia/Macau": {
-		"location": "Macau"
-		},
-	"Asia/Magadan": null,
-	"Asia/Makassar": null,
-	"Asia/Manila": null,
-	"Asia/Muscat": null,
-	"Asia/Nicosia": null,
-	"Asia/Novokuznetsk": null,
-	"Asia/Novosibirsk": null,
-	"Asia/Omsk": null,
-	"Asia/Oral": null,
-	"Asia/Phnom_Penh": null,
-	"Asia/Pontianak": null,
-	"Asia/Pyongyang": null,
-	"Asia/Qatar": null,
-	"Asia/Qyzylorda": null,
-	"Asia/Rangoon": null,
-	"Asia/Riyadh": null,
-	"Asia/Sakhalin": null,
-	"Asia/Samarkand": null,
-	"Asia/Seoul": null,
-	"Asia/Shanghai": {
-		"location": "China"
-		},
-	"Asia/Singapore": null,
-	"Asia/Taipei": {
-		"location": "Taiwan"
-		},
-	"Asia/Tashkent": null,
-	"Asia/Tbilisi": null,
-	"Asia/Tehran": null,
-	"Asia/Thimphu": null,
-	"Asia/Tokyo": null,
-	"Asia/Ulaanbaatar": null,
-	"Asia/Urumqi": false,
-	"Asia/Ust-Nera": null,
-	"Asia/Vientiane": null,
-	"Asia/Vladivostok": null,
-	"Asia/Yakutsk": null,
-	"Asia/Yekaterinburg": null,
-	"Asia/Yerevan": null,
 
 	"Atlantic/Azores": null,
 	"Atlantic/Bermuda": null,
