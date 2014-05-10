@@ -11415,6 +11415,12 @@ module.exports = {
 		},
 
 
+	// +10:30 / +11:30
+	"Australia/Lord_Howe": {
+		"location": "Lord Howe Island"
+		},
+
+
 	// +10:00
 	"Antarctica/DumontDUrville": {
 		"location": "Dumont d'Urville Station, Antarctica"
@@ -11424,6 +11430,35 @@ module.exports = {
 		},
 	"Asia/Yakutsk": {
 		"location": "Yakutsk, Russia"
+		},
+
+
+	// +10:00 / +11:00
+	"Australia/Brisbane": {
+		"location": "Brisbane, Australia"
+		},
+	"Australia/Currie": false, // dup: Australia/Hobart
+	"Australia/Hobart": {
+		"location": "Hobart, Australia"
+		},
+	"Australia/Lindeman": {
+		"location": "Lindeman Island, Australia"
+		},
+	"Australia/Melbourne": {
+		"location": "Melbourne, Australia"
+		},
+	"Australia/Sydney": {
+		"location": "Sydney, Australia"
+		},
+
+
+	// +09:30 / +10:30
+	"Australia/Adelaide": {
+		"location": "Adelaide, Australia"
+		},
+	"Australia/Broken_Hill": false, // dup: Australia/Adelaide
+	"Australia/Darwin": {
+		"location": "Darwin, Australia"
 		},
 
 
@@ -11451,7 +11486,10 @@ module.exports = {
 		},
 
 
-
+	// +08:45 / +09:45
+	"Australia/Eucla": {
+		"location": "Eucla, Australia"
+		},
 
 
 	// +08:00
@@ -11501,6 +11539,9 @@ module.exports = {
 		},
 	"Asia/Taipei": {
 		"location": "Taiwan"
+		},
+	"Australia/Perth": {
+		"location": "Perth, Australia"
 		},
 
 
@@ -11627,6 +11668,11 @@ module.exports = {
 	"Asia/Yerevan": {
 		"location": "Yerevan, Armenia"
 		},
+	"Europe/Moscow": {
+		"location": "Moscow, Russia"
+		},
+	"Europe/Samara": false, // dup: Europe/Moscow
+	"Europe/Volgograd": false, // dup: Europe/Moscow
 
 
 	// +04:00 / +05:00
@@ -11686,6 +11732,10 @@ module.exports = {
 		},
 	"Asia/Riyadh": {
 		"location": "Riyadh, Saudi Arabia"
+		},
+	"Europe/Kaliningrad": false, // dup: Europe/Minsk
+	"Europe/Minsk": {
+		"location": "Minsk, Belarus"
 		},
 
 
@@ -11759,6 +11809,39 @@ module.exports = {
 	"Asia/Nicosia": {
 		"location": "Nicosia, Cyprus"
 		},
+	"Europe/Athens": {
+		"location": "Athens, Greece"
+		},
+	"Europe/Bucharest": {
+		"location": "Bucharest, Romania"
+		},
+	"Europe/Chisinau": {
+		"location": "Chișinău, Moldova"
+		},
+	"Europe/Helsinki": {
+		"location": "Helsinki, Finland"
+		},
+	"Europe/Istanbul": {
+		"location": "Istanbul, Turkey"
+		},
+	"Europe/Kiev": {
+		"location": "Kiev, Ukraine"
+		},
+	"Europe/Riga": {
+		"location": "Riga, Latvia"
+		},
+	"Europe/Simferopol": false, // dup: Europe/Kiev
+	"Europe/Sofia": {
+		"location": "Sofia, Bulgaria"
+		},
+	"Europe/Tallinn": {
+		"location": "Tallinn, Estonia"
+		},
+	"Europe/Uzhgorod": false, // dup: Europe/Kiev
+	"Europe/Vilnius": {
+		"location": "Vilnium, Lithuania"
+		},
+	"Europe/Zaporozhye": false, // dup: Europe/Kiev
 
 
 	// +01:00
@@ -11808,6 +11891,72 @@ module.exports = {
 	"Africa/Windhoek": {
 		"location": "Windhoek, Namibia"
 		},
+	"Europe/Amsterdam": {
+		"location": "Amsterdam, Netherlands"
+		},
+	"Europe/Andorra": {
+		"location": "Andorra, Andorra"
+		},
+	"Europe/Belgrade": {
+		"location": "Belgrade, Serbia"
+		},
+	"Europe/Berlin": {
+		"location": "Berlin, Germany"
+		},
+	"Europe/Brussels": {
+		"location": "Brussels, Belgium"
+		},
+	"Europe/Budapest": {
+		"location": "Budapest, Hungary"
+		},
+	"Europe/Copenhagen": {
+		"location": "Copenhagen, Denmark"
+		},
+	"Europe/Gibraltar": {
+		"location": "Gibraltar"
+		},
+	"Europe/Luxembourg": {
+		"location": "Luxembourg, Luxembourg"
+		},
+	"Europe/Madrid": {
+		"location": "Madrid, Spain"
+		},
+	"Europe/Malta": {
+		"location": "Valletta, Malta"
+		},
+	"Europe/Monaco": {
+		"location": "Monaco, Monaco"
+		},
+	"Europe/Oslo": {
+		"location": "Oslo, Norway"
+		},
+	"Europe/Paris": {
+		"location": "Paris, France"
+		},
+	"Europe/Prague": {
+		"location": "Prague, Czech Republic"
+		},
+	"Europe/Rome": {
+		"location": "Rome, Italy"
+		},
+	"Europe/Stockholm": {
+		"location": "Stockhold, Sweden"
+		},
+	"Europe/Tirane": {
+		"location": "Tirane, Albania"
+		},
+	"Europe/Vaduz": {
+		"location": "Vaduz, Liechtenstein"
+		},
+	"Europe/Vienna": {
+		"location": "Vienna, Austria"
+		},
+	"Europe/Warsaw": {
+		"location": "Warsaw, Poland"
+		},
+	"Europe/Zurich": {
+		"location": "Zürich, Switzerland"
+		},
 
 
 	//  00:00
@@ -11850,6 +11999,12 @@ module.exports = {
 	"Africa/Sao_Tome": {
 		"location": "São Tomé, São Tomé and Príncipe"
 		},
+	"Atlantic/Reykjavik": {
+		"location": "Reykjavík, Iceland"
+		},
+	"Atlantic/St_Helena": {
+		"location": "Saint Helena Island"
+		},
 
 
 	//  00:00 / +01:00
@@ -11862,16 +12017,47 @@ module.exports = {
 	"Africa/Freetown": {
 		"location": "Freetown, Liberia"
 		},
+	"Atlantic/Canary": {
+		"location": "Canary Islands"
+		},
+	"Atlantic/Faroe": {
+		"location": "Faroe Islands"
+		},
+	"Atlantic/Madeira": {
+		"location": "Madeira Islands"
+		},
+	"Europe/Dublin": {
+		"location": "Dublin, Ireland"
+		},
+	"Europe/Lisbon": {
+		"location": "Lisbon, Portugal"
+		},
+	"Europe/London": {
+		"location": "London, England"
+		},
+
+
+	// -01:00
+	"Atlantic/Cape_Verde": {
+		"location": "Praia, Cape Verde"
+		},
+
 
 	// -01:00 /  00:00
 	"America/Scoresbysund": {
 		"location": "Ittoqqortoormiit, Greenland"
+		},
+	"Atlantic/Azores": {
+		"location": "The Azores"
 		},
 
 
 	// -02:00
 	"America/Noronha": {
 		"location": "Fernando de Noronha, Brazil"
+		},
+	"Atlantic/South_Georgia": {
+		"location": "South Georgia and the South Sandwich Islands"
 		},
 
 
@@ -11910,9 +12096,11 @@ module.exports = {
 	"America/Santarem": {
 		"location": "Santarém, Pará, Brazil"
 		},
-	// -03:00
 	"Antarctica/Rothera": {
 		"location": "Rothera Station, Antarctica"
+		},
+	"Atlantic/Stanley": {
+		"location": "Falkland Islands"
 		},
 
 
@@ -12053,6 +12241,9 @@ module.exports = {
 		},
 	"Antarctica/Palmer": {
 		"location": "Palmer Station, Antarctica"
+		},
+	"Atlantic/Bermuda": {
+		"location": "Hamilton, Bermuda"
 		},
 
 
@@ -12245,31 +12436,6 @@ module.exports = {
 
 
 
-	"Atlantic/Azores": null,
-	"Atlantic/Bermuda": null,
-	"Atlantic/Canary": null,
-	"Atlantic/Cape_Verde": {
-		"location": "Cape Verde"
-		},
-	"Atlantic/Faroe": null,
-	"Atlantic/Madeira": null,
-	"Atlantic/Reykjavik": null,
-	"Atlantic/South_Georgia": null,
-	"Atlantic/St_Helena": null,
-	"Atlantic/Stanley": null,
-
-	"Australia/Adelaide": null,
-	"Australia/Brisbane": null,
-	"Australia/Broken_Hill": null,
-	"Australia/Currie": null,
-	"Australia/Darwin": null,
-	"Australia/Eucla": null,
-	"Australia/Hobart": null,
-	"Australia/Lindeman": null,
-	"Australia/Lord_Howe": null,
-	"Australia/Melbourne": null,
-	"Australia/Perth": null,
-	"Australia/Sydney": null,
 
 	"CET": false,
 	"CST6CDT": false,
@@ -12306,50 +12472,6 @@ module.exports = {
 	"Etc/GMT-9": false,
 	"Etc/UCT": false,
 	"Etc/UTC": false,
-
-	"Europe/Amsterdam": null,
-	"Europe/Andorra": null,
-	"Europe/Athens": null,
-	"Europe/Belgrade": null,
-	"Europe/Berlin": null,
-	"Europe/Brussels": null,
-	"Europe/Bucharest": null,
-	"Europe/Budapest": null,
-	"Europe/Chisinau": null,
-	"Europe/Copenhagen": null,
-	"Europe/Dublin": null,
-	"Europe/Gibraltar": null,
-	"Europe/Helsinki": null,
-	"Europe/Istanbul": null,
-	"Europe/Kaliningrad": null,
-	"Europe/Kiev": null,
-	"Europe/Lisbon": null,
-	"Europe/London": null,
-	"Europe/Luxembourg": null,
-	"Europe/Madrid": null,
-	"Europe/Malta": null,
-	"Europe/Minsk": null,
-	"Europe/Monaco": null,
-	"Europe/Moscow": null,
-	"Europe/Oslo": null,
-	"Europe/Paris": null,
-	"Europe/Prague": null,
-	"Europe/Riga": null,
-	"Europe/Rome": null,
-	"Europe/Samara": null,
-	"Europe/Simferopol": null,
-	"Europe/Sofia": null,
-	"Europe/Stockholm": null,
-	"Europe/Tallinn": null,
-	"Europe/Tirane": null,
-	"Europe/Uzhgorod": null,
-	"Europe/Vaduz": null,
-	"Europe/Vienna": null,
-	"Europe/Vilnius": null,
-	"Europe/Volgograd": null,
-	"Europe/Warsaw": null,
-	"Europe/Zaporozhye": null,
-	"Europe/Zurich": null,
 
 	"HST": false,
 
