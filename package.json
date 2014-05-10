@@ -16,7 +16,9 @@
     "hashdirectory": "^0.1.0",
     "moment-timezone": "0.0.3",
     "mustache-express": "^1.0.1",
-    "random-js": "^1.0.3"
+    "q": "^1.0.1",
+    "random-js": "^1.0.3",
+    "twitter": "^0.2.9"
   },
   "devDependencies": {
     "browserify": "^3.41.0",
@@ -26,7 +28,8 @@
     "grunt-contrib-sass": "^0.7.3",
     "grunt-contrib-watch": "^0.6.1",
     "mocha": "^1.18.2",
-    "should": "^3.2.0"
+    "should": "^3.2.0",
+    "with-env": "0.0.3"
   },
   "engines": {
     "node": "^0.10.26"

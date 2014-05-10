@@ -6,6 +6,13 @@ var five = require('./five');
 var hashdirectory = require('hashdirectory');
 var moment = require('moment-timezone');
 var mustacheExpress = require('mustache-express');
+var Q = require('q');
+var tw = require('./tw')({
+    consumer_key: process.env.TWITTER_CONSUMER_KEY,
+    consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+    access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
+    access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+});
 
 var zoneNames = require('./zones');
 
@@ -71,7 +78,7 @@ app.get('/', function(req, res) {
 	res.render('index', data);
 });
 
-app.get('/t/:time', function(req, res, next) {
+app.get('/d/:time', function(req, res, next) {
 	var t = req.params.time;
 	var time = moment(t);
 
@@ -87,6 +94,38 @@ app.get('/t/:time', function(req, res, next) {
 	};
 
 	res.render('index', data);
+});
+
+app.get('/t/:tweet', function(req, res, next) {
+	var t = req.params.tweet;
+
+	var tweetPromise = tw.getTweet(t);
+	var oembedPromise = tw.oembed(t);
+
+	Q.all([tweetPromise, oembedPromise]).spread(function(tweet, oembed) {
+		var time = moment(tweet.created_at);
+
+		if (!time.isValid()) {
+			return next();
+		}
+
+		var data = {
+			verb: 'was', // Maybe, if it's recent enough, use 'is'.
+			buckets: getBuckets(time),
+			tweet: oembed.html,
+			assetVersion: assetVersion,
+			userName: tweet.user.screen_name,
+			userUrl: 'https://twitter.com/' + tweet.user.screen_name,
+			live: false,
+			gaCode: process.env.GA_CODE
+		};
+
+		res.render('tweet', data);
+	}).catch(function(e) {
+		console.log(e);
+		console.log(e.stack);
+		next(e);
+	});
 });
 
 var port = process.env.PORT || 5000;

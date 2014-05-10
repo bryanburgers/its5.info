@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+	<title>It's 5 o'clock somewhere</title>
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="/assets/{{{ assetVersion }}}/css/style.css">
+</head>
+<body {{#live}}data-live="live"{{/live}}>
+	<h1><a href="/"><span class="a">It's</span> <span class="b">5 o'clock</span> <span class="c">somewhere</span></a></h1>
+
+	<div class="tweetcontainer">
+		{{{tweet}}}
+	</div>
+
+	<p>It sure {{ verb }}, <a href="{{ userUrl }}">@{{ userName }}</a>. In fact, it {{ verb }}...</p>
+
+	<p class="secondary">(Where's it 5 o'clock now, you ask? <a href="/">Let's go live.</a>)</p>
+
+	{{#buckets}}
+	<section class="bucket" data-offset="{{ offset }}">
+		<header>
+			<h2>It {{ verb }} <time datetime="{{ time.iso }}">{{ time.human }}</time> in&hellip;</h2>
+		</header>
+		<div class="bucketcontent">
+			<ul>
+			{{#zones}}
+				<li>{{ location }}</li>
+			{{/zones}}
+			</ul>
+		</div>
+	</section>
+	{{/buckets}}
+
+	<script src="/assets/{{{ assetVersion }}}/js/somewhere.js"></script>
+
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+		ga('create', '{{{ gaCode }}}');
+		ga('send', 'pageview');
+	</script>
+</body>
+</html>
