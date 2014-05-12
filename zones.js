@@ -1095,7 +1095,7 @@ module.exports = {
 	"America/Mexico_City": {
 		"location": "Mexica City, Mexico"
 		},
-	"America/Monterrey": null, // dup: America/Mexico_City
+	"America/Monterrey": false, // dup: America/Mexico_City
 	"America/North_Dakota/Beulah": false, // dup: America/Chicago
 	"America/North_Dakota/Center": false, // dup: America/Chicago
 	"America/North_Dakota/New_Salem": false, // dup: America/Chicago
