@@ -187,6 +187,9 @@ module.exports = {
 	"Asia/Vientiane": {
 		"location": "Vientiane, Laos"
 		},
+	"Indian/Christmas": {
+		"location": "Christmas Island, Australia"
+		},
 
 
 	// +07:00 / +08:00
@@ -198,6 +201,9 @@ module.exports = {
 	// +06:30
 	"Asia/Rangoon": {
 		"location": "Yangon, Myanmar"
+		},
+	"Indian/Cocos": {
+		"location": "Cosos Islands"
 		},
 
 
@@ -222,6 +228,9 @@ module.exports = {
 		},
 	"Asia/Yekaterinburg": {
 		"location": "Yekaterinburg, Russia"
+		},
+	"Indian/Chagos": {
+		"location": "Chagos Archipelago"
 		},
 
 
@@ -265,6 +274,12 @@ module.exports = {
 	"Asia/Tashkent": {
 		"location": "Tashkent, Uzbekistan"
 		},
+	"Indian/Kerguelen": {
+		"location": "Kerguelen Islands"
+		},
+	"Indian/Maldives": {
+		"location": "Malé, Maldives"
+		},
 
 
 	// +04:30
@@ -290,11 +305,20 @@ module.exports = {
 		},
 	"Europe/Samara": false, // dup: Europe/Moscow
 	"Europe/Volgograd": false, // dup: Europe/Moscow
+	"Indian/Mahe": {
+		"location": "Mahé, Seychelles"
+		},
+	"Indian/Reunion": {
+		"location": "Réunion Island"
+		},
 
 
 	// +04:00 / +05:00
 	"Asia/Baku": {
 		"location": "Baku, Azerbaijan"
+		},
+	"Indian/Mauritius": {
+		"location": "Port Louis, Mauritius"
 		},
 
 
@@ -353,6 +377,15 @@ module.exports = {
 	"Europe/Kaliningrad": false, // dup: Europe/Minsk
 	"Europe/Minsk": {
 		"location": "Minsk, Belarus"
+		},
+	"Indian/Antananarivo": {
+		"location": "Antananarivo, Madagascar"
+		},
+	"Indian/Comoro": {
+		"location": "The Comoros"
+		},
+	"Indian/Mayotte": {
+		"location": "Mamoudzou, Mayotte"
 		},
 
 
@@ -1091,18 +1124,6 @@ module.exports = {
 	"Etc/UTC": false,
 
 	"HST": false,
-
-	"Indian/Antananarivo": null,
-	"Indian/Chagos": null,
-	"Indian/Christmas": null,
-	"Indian/Cocos": null,
-	"Indian/Comoro": null,
-	"Indian/Kerguelen": null,
-	"Indian/Mahe": null,
-	"Indian/Maldives": null,
-	"Indian/Mauritius": null,
-	"Indian/Mayotte": null,
-	"Indian/Reunion": null,
 
 	"MET": false,
 	"MST": false,
