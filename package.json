@@ -14,6 +14,7 @@
     "connect": "^2.14.3",
     "express": "^3.5.1",
     "hashdirectory": "^0.1.0",
+    "lru-cache": "^2.5.0",
     "moment-timezone": "0.0.3",
     "mustache-express": "^1.0.1",
     "q": "^1.0.1",
