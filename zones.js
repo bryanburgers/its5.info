@@ -1,6 +1,36 @@
 module.exports = {
 
 
+	// +14:00
+	"Pacific/Kiritimati": {
+		"location": "Kiritimati, Kiribati"
+		},
+
+
+	// +13:00
+	"Pacific/Enderbury": {
+		"location": "Enderbury Island"
+		},
+	"Pacific/Fakaofo": {
+		"location": "Fakaofo Island"
+		},
+
+
+	// +13:00 / +14:00
+	"Pacific/Apia": {
+		"location": "Apia, Samoa"
+		},
+	"Pacific/Tongatapu": {
+		"location": "Tongatapu, Tonga"
+		},
+
+
+	// +12:45 / +13:45
+	"Pacific/Chatham": {
+		"location": "Chatham Island"
+		},
+
+
 	// +12:00 / +13:00
 	"Antarctica/McMurdo": {
 		"location": "McMurdo Station, Antarctica"
@@ -17,6 +47,40 @@ module.exports = {
 	"Asia/Magadan": {
 		"location": "Magadan, Russia"
 		},
+	"Pacific/Funafuti": {
+		"location": "Funafuti, Tuvalu"
+		},
+	"Pacific/Kwajalein": false, // dup: Pacific/Majuro
+	"Pacific/Majuro": {
+		"location": "Majuro, Marshall Islands"
+		},
+	"Pacific/Nauru": {
+		"location": "Nauru Island"
+		},
+	"Pacific/Tarawa": {
+		"location": "Tarawa Atoll"
+		},
+	"Pacific/Wake": {
+		"location": "Wake Island"
+		},
+	"Pacific/Wallis": {
+		"location": "Wallis and Futuna"
+		},
+
+
+	// +12:00 / +13:00
+	"Pacific/Auckland": {
+		"location": "Auckland, New Zealand"
+		},
+	"Pacific/Fiji": {
+		"location": "Fiji"
+		},
+
+
+	// +11:30
+	"Pacific/Norfolk": {
+		"location": "Norfolk Island"
+		},
 
 
 	// +11:00
@@ -29,6 +93,22 @@ module.exports = {
 	"Asia/Ust-Nera": false, // dup: Asia/Vladivostok
 	"Asia/Vladivostok": {
 		"location": "Vladivostok, Russia"
+		},
+	"Pacific/Guadalcanal": {
+		"location": "Solomon Islands"
+		},
+	"Pacific/Kosrae": false, // dup: Pacific/Pohnpei
+	"Pacific/Pohnpei": {
+		"location": "Federated States of Micronesia"
+		},
+
+
+	// +11:00 / +12:00
+	"Pacific/Efate": {
+		"location": "Vanuatu"
+		},
+	"Pacific/Noumea": {
+		"location": "Nouméa, New Caledonia"
 		},
 
 
@@ -47,6 +127,16 @@ module.exports = {
 		},
 	"Asia/Yakutsk": {
 		"location": "Yakutsk, Russia"
+		},
+	"Pacific/Chuuk": false, // dup: Pacific/Pohnpei
+	"Pacific/Guam": {
+		"location": "Guam, US"
+	},
+	"Pacific/Port_Moresby": {
+		"location": "Port Moresby, Papua New Guinea"
+		},
+	"Pacific/Saipan": {
+		"location": "Saipan, Northern Mariana Islands, US"
 		},
 
 
@@ -94,6 +184,9 @@ module.exports = {
 		},
 	"Asia/Tokyo": {
 		"location": "Tokyo, Japan"
+		},
+	"Pacific/Palau": {
+		"location": "Palau"
 		},
 
 
@@ -967,6 +1060,10 @@ module.exports = {
 		"location": "Regina, SK, Canada"
 		},
 	"America/Swift_Current": false, // dup: America/Regina
+	"Pacific/Galapagos": {
+		"location": "Galápagos Islands"
+		},
+
 
 
 	// -06:00 / -05:00
@@ -1011,6 +1108,9 @@ module.exports = {
 	"America/Winnipeg": {
 		"location": "Winnipeg, MB, Canada"
 		},
+	"Pacific/Easter": {
+		"location": "Easter Island"
+		},
 
 
 	// -07:00
@@ -1053,6 +1153,9 @@ module.exports = {
 	"America/Metlakatla": {
 		"location": "Annette Island, AK, USA"
 		},
+	"Pacific/Pitcairn": {
+		"location": "Pitcairn Islands"
+		},
 
 
 	// -08:00 / -07:00
@@ -1070,6 +1173,12 @@ module.exports = {
 	"America/Whitehorse": false, // dup: America/Vancouver
 
 
+	// -09:00
+	"Pacific/Gambier": {
+		"location": "Gambier Islands"
+		},
+
+
 	// -09:00 / -08:00
 	"America/Anchorage": {
 		"location": "Anchorage, AK, USA"
@@ -1079,12 +1188,44 @@ module.exports = {
 	"America/Sitka": false, // dup: America/Anchorage
 	"America/Yakutat": false, // dup: America/Anchorage
 
+
+	// -09:30
+	"Pacific/Marquesas": {
+		"location": "Marquesas Islands"
+		},
+
+
+	// -10:00
+	"Pacific/Honolulu": {
+		"location": "Honolulu, HI, USA"
+		},
+	"Pacific/Johnston": {
+		"location": "Johnston Atoll, US"
+		},
+	"Pacific/Tahiti": {
+		"location": "Tahiti"
+		},
+
+
 	// -10:00 / -09:00
 	"America/Adak": {
 		"location": "Aleutian Islands"
 		},
+	"Pacific/Rarotonga": {
+		"location": "Cook Islands"
+		},
 
 
+	// -11:00
+	"Pacific/Midway": {
+		"location": "Midway Atoll"
+		},
+	"Pacific/Niue": {
+		"location": "Niue"
+		},
+	"Pacific/Pago_Pago": {
+		"location": "Pago Pago, American Samoa, US"
+		},
 
 
 	"CET": false,
@@ -1129,47 +1270,6 @@ module.exports = {
 	"MST": false,
 	"MST7MDT": false,
 	"PST8PDT": false,
-
-	"Pacific/Apia": null,
-	"Pacific/Auckland": null,
-	"Pacific/Chatham": null,
-	"Pacific/Chuuk": null,
-	"Pacific/Easter": null,
-	"Pacific/Efate": null,
-	"Pacific/Enderbury": null,
-	"Pacific/Fakaofo": null,
-	"Pacific/Fiji": null,
-	"Pacific/Funafuti": null,
-	"Pacific/Galapagos": null,
-	"Pacific/Gambier": null,
-	"Pacific/Guadalcanal": null,
-	"Pacific/Guam": null,
-	"Pacific/Honolulu": {
-		"location": "Honolulu, HI, USA"
-		},
-	"Pacific/Johnston": null,
-	"Pacific/Kiritimati": null,
-	"Pacific/Kosrae": null,
-	"Pacific/Kwajalein": null,
-	"Pacific/Majuro": null,
-	"Pacific/Marquesas": null,
-	"Pacific/Midway": null,
-	"Pacific/Nauru": null,
-	"Pacific/Niue": null,
-	"Pacific/Norfolk": null,
-	"Pacific/Noumea": null,
-	"Pacific/Pago_Pago": null,
-	"Pacific/Palau": null,
-	"Pacific/Pitcairn": null,
-	"Pacific/Pohnpei": null,
-	"Pacific/Port_Moresby": null,
-	"Pacific/Rarotonga": null,
-	"Pacific/Saipan": null,
-	"Pacific/Tahiti": null,
-	"Pacific/Tarawa": null,
-	"Pacific/Tongatapu": null,
-	"Pacific/Wake": null,
-	"Pacific/Wallis": null,
 
 	"WET": false
 };
