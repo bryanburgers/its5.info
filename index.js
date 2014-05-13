@@ -7,12 +7,13 @@ var hashdirectory = require('hashdirectory');
 var moment = require('moment-timezone');
 var mustacheExpress = require('mustache-express');
 var Q = require('q');
-var tw = require('./tw')({
+var twitterApi = require('./twitterApi')({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
     access_token_key: process.env.TWITTER_ACCESS_TOKEN_KEY,
     access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
 });
+var twitterInteraction = require('./twitterInteraction')(twitterApi);
 
 var zoneNames = require('./zones');
 
@@ -125,6 +126,21 @@ app.get('/t/:tweet', function(req, res, next) {
 		console.log(e);
 		console.log(e.stack);
 		next(e);
+	});
+});
+
+// Triggered by an external service to run the Twitter searching and tweeting
+// code.
+app.get('/_/pump', function(req, res, next) {
+	var tweets = twitterInteraction.pump();
+
+	tweets.then(function(results) {
+		res.set('Content-Type', 'text/plain');
+		res.end('OK');
+	}).catch(function(err) {
+		console.log(err);
+		console.log(err.stack);
+		return next(err);
 	});
 });
 

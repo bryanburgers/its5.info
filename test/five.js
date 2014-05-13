@@ -54,6 +54,15 @@ describe('five', function() {
 		result.buckets[0].zones.should.not.containObj({ designator: 'CST6CDT' }); // 5pm
 	});
 
+	it('does not change the value of the moment (5:00 pm CDT)', function() {
+		var m = moment('2014-04-02T17:00:00-0500');
+		var before = m.format('HH:mm (Z)');
+		var result = five(m);
+		var after = m.format('HH:mm (Z)');
+
+		before.should.eql(after);
+	});
+
 	it('returns the correct zones (5:59 PM CDT)', function() {
 		var result = five(moment('2014-04-02T17:59:00-0500'));
 		result.should.have.property('buckets').instanceOf(Array).and.have.lengthOf(1);

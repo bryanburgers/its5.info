@@ -42,8 +42,30 @@ TwitterApi.prototype._getCached = function(key, uri, options) {
 	}
 };
 
-TwitterApi.prototype.search = function(term) {
-	return this._get('/search/tweets.json', { q: term, result_type: 'recent', count: 100 });
+TwitterApi.prototype._post = function(uri, options) {
+	var self = this;
+	return Q.Promise(function(resolve, reject) {
+		self.twit.post(uri, options, function(result) {
+			if (result instanceof Error) {
+				reject(Error);
+				return;
+			}
+			resolve(result);
+		});
+	});
+};
+
+TwitterApi.prototype.search = function(term, sinceId) {
+	var data = {
+		q: term,
+		result_type: 'recent',
+		count: 100
+	};
+
+	if (sinceId) {
+		data.since_id = sinceId;
+	}
+	return this._get('/search/tweets.json', data);
 };
 
 TwitterApi.prototype.oembed = function(id) {
@@ -52,6 +74,24 @@ TwitterApi.prototype.oembed = function(id) {
 
 TwitterApi.prototype.getTweet = function(id) {
 	return this._getCached('tweet:' + id, '/statuses/show.json', { id: id });
+};
+
+TwitterApi.prototype.postTweet = function(text, replyId) {
+	var data = {
+		status: text
+	};
+	if (replyId) {
+		data.in_reply_to_status_id = replyId;
+	}
+	return this._post('/statuses/update.json', data);
+};
+
+TwitterApi.prototype.getConfiguration = function() {
+	return this._getCached('configuration:0', '/help/configuration.json');
+};
+
+TwitterApi.prototype.getTimeline = function() {
+	return this._get('/statuses/user_timeline.json');
 };
 
 module.exports = function(creds) {
