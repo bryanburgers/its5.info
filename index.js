@@ -7,6 +7,7 @@ var hashdirectory = require('hashdirectory');
 var moment = require('moment-timezone');
 var mustacheExpress = require('mustache-express');
 var Q = require('q');
+var tweet = require('./tweet');
 var twitterApi = require('./twitterApi')({
     consumer_key: process.env.TWITTER_CONSUMER_KEY,
     consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
@@ -100,23 +101,30 @@ app.get('/d/:time', function(req, res, next) {
 app.get('/t/:tweet', function(req, res, next) {
 	var t = req.params.tweet;
 
-	var tweetPromise = tw.getTweet(t);
-	var oembedPromise = tw.oembed(t);
+	var tweetPromise = twitterApi.getTweet(t);
+	var oembedPromise = twitterApi.oembed(t);
 
-	Q.all([tweetPromise, oembedPromise]).spread(function(tweet, oembed) {
-		var time = moment(tweet.created_at);
+	Q.all([tweetPromise, oembedPromise]).spread(function(tweetData, oembed) {
+		var time = moment(tweetData.created_at);
 
 		if (!time.isValid()) {
 			return next();
 		}
+
+		var twitterMeta = {
+			title: "It's 5 o'clock somewhere",
+			description: tweet(time, 200),
+			image: 'http://www.its5.info/assets/' + assetVersion + '/images/clocks/' + time.format('HHmm') + '-120x120.png'
+		};
 
 		var data = {
 			verb: 'was', // Maybe, if it's recent enough, use 'is'.
 			buckets: getBuckets(time),
 			tweet: oembed.html,
 			assetVersion: assetVersion,
-			userName: tweet.user.screen_name,
-			userUrl: 'https://twitter.com/' + tweet.user.screen_name,
+			twitterMeta: twitterMeta,
+			userName: tweetData.user.screen_name,
+			userUrl: 'https://twitter.com/' + tweetData.user.screen_name,
 			live: false,
 			gaCode: process.env.GA_CODE
 		};

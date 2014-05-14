@@ -4,6 +4,15 @@
 	<title>It's 5 o'clock somewhere</title>
 	<meta name="viewport" content="width=device-width">
 	<link rel="stylesheet" href="/assets/{{{ assetVersion }}}/css/style.css">
+
+	{{#twitterMeta}}
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="@its5info">
+	<meta name="twitter:title" content="{{ title }}">
+	<meta name="twitter:description" content="{{ description }}">
+	<meta name="twitter:image" content="{{{ image }}}">
+	{{/twitterMeta}}
+
 </head>
 <body {{#live}}data-live="live"{{/live}}>
 	<h1><a href="/"><span class="a">It's</span> <span class="b">5 o'clock</span> <span class="c">somewhere</span></a></h1>
