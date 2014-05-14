@@ -74,8 +74,9 @@ app.get('/', function(req, res) {
 		buckets: getBuckets(moment()),
 		assetVersion: assetVersion,
 		live: true,
-		gaCode: process.env.GA_CODE
-	}
+		gaCode: process.env.GA_CODE,
+		bitcoinAccount: process.env.BITCOIN_ACCOUNT
+	};
 
 	res.render('index', data);
 });
@@ -92,7 +93,8 @@ app.get('/d/:time', function(req, res, next) {
 		buckets: getBuckets(time),
 		assetVersion: assetVersion,
 		live: false,
-		gaCode: process.env.GA_CODE
+		gaCode: process.env.GA_CODE,
+		bitcoinAccount: process.env.BITCOIN_ACCOUNT
 	};
 
 	res.render('index', data);
@@ -126,7 +128,8 @@ app.get('/t/:tweet', function(req, res, next) {
 			userName: tweetData.user.screen_name,
 			userUrl: 'https://twitter.com/' + tweetData.user.screen_name,
 			live: false,
-			gaCode: process.env.GA_CODE
+			gaCode: process.env.GA_CODE,
+			bitcoinAccount: process.env.BITCOIN_ACCOUNT
 		};
 
 		res.render('tweet', data);

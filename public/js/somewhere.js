@@ -119,6 +119,8 @@ var zoneInfo = require('./zones');
 
 function five(instant) {
 	instant = instant || moment();
+	// Clone it so we don't mess with the instant that the user passed in.
+	instant = moment(instant);
 
 	var zones = moment.tz.zones();
 	var ret = {

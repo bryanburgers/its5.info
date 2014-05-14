@@ -109,3 +109,18 @@ a {
 	}
 }
 
+footer {
+	border-top: 1px dashed #999;
+
+	.bitcoin {
+		display: block;
+		text-align: center;
+		border: 1px dashed #ccc;
+		background: #ddd;
+		text-decoration: none;
+		font-family: monospace;
+		margin-top: 0.5em;
+		font-size: 0.7em;
+		padding: 0.5em 0;
+	}
+}

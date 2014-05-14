@@ -23,6 +23,21 @@
 	</section>
 	{{/buckets}}
 
+	<footer>
+		{{#bitcoinAccount}}
+		<p>
+			Were you mildly amused by this site? Have a spare fraction of a bitcoin?
+			Send it this way:
+			<a href="bitcoin:{{bitcoinAccount}}" class="bitcoin">{{bitcoinAccount}}</a>
+		</p>
+		{{/bitcoinAccount}}
+
+		<p>
+			Created by <a href="http://www.burgers.io">Bryan Burgers</a>. Get the
+			code on <a href="https://github.com/bryanburgers/its5.info">GitHub</a>.
+		</p>
+	</footer>
+
 	<script src="/assets/{{{ assetVersion }}}/js/somewhere.js"></script>
 
 	<script>
