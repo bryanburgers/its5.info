@@ -29,7 +29,7 @@ app.set('views', __dirname + '/views');
 
 // Use this "asset version" to cache bust when we update any of the assets.
 var assetVersion = hashdirectory.sync(__dirname + '/public');
-var re = new RegExp('/' + assetVersion + '/');
+var re = new RegExp('/[0-9a-f]{40}/');
 app.use('/assets', function(req, res, next) {
 	req.url = req.url.replace(re, '/');
 	next();
