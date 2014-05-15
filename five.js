@@ -18,6 +18,13 @@ function five(instant) {
 	zones.forEach(function(zone) {
 		var mtz = instant.tz(zone.displayName);
 
+		// If the zone is marked in zoneInfo as false, don't include it.
+		// Prefiltering the list means don't need to filter it later, and then
+		// filter buckets that have no items.
+		if (zoneInfo[zone.displayName] === false) {
+			return;
+		}
+
 		var t = parseInt(mtz.format('HHmm'));
 		if (1700 <= t && t < 1800) {
 			locations.push([mtz.format('YYYY-MM-DD[T]HH:mm'), zone.displayName]);

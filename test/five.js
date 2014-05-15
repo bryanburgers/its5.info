@@ -131,7 +131,7 @@ describe('five', function() {
 
 				var t = prefix + hs + ':' + ms + 'z';
 				var instant = moment(t);
-				var result = five.old(instant);
+				var result = five(instant);
 				assert(result.buckets.length !== 0, t + ' should return at least one entry');
 				assert(result.buckets[0].zones.length !== 0, t + ' should return at least one zone');
 			}
@@ -168,5 +168,11 @@ describe('five', function() {
 		assert(result1.buckets[0].zones[0].designator === result2.buckets[0].zones[0].designator, 'Designators at position 0 should be equal');
 		assert(result1.buckets[0].zones[3].designator === result2.buckets[0].zones[3].designator, 'Designators at position 3 should be equal');
 		assert(result1.buckets[0].zones[5].designator === result2.buckets[0].zones[5].designator, 'Designators at position 5 should be equal');
+	});
+
+	it('does not return an empty bucket (12:45 am CDT)', function() {
+		// https://github.com/bryanburgers/its5.info/issues/1
+		var result = five(moment('2014-05-15T00:46:00-0500'));
+		result.buckets[0].zones.length.should.be.above(0);
 	});
 });
