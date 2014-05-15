@@ -69,6 +69,16 @@ function getBuckets(time) {
 	return data.buckets;
 }
 
+function getTwitterMeta(time) {
+	var twitterMeta = {
+		title: "It's 5 o'clock somewhere",
+		description: tweet(time, 200),
+		image: 'http://www.its5.info/assets/' + assetVersion + '/images/clocks/' + time.format('HHmm') + '-120x120.png'
+	};
+
+	return twitterMeta;
+}
+
 app.get('/', function(req, res) {
 	var data = {
 		buckets: getBuckets(moment()),
@@ -81,23 +91,42 @@ app.get('/', function(req, res) {
 	res.render('index', data);
 });
 
-app.get('/d/:time', function(req, res, next) {
-	var t = req.params.time;
-	var time = moment(t);
+// /@2014-04-21T17:00Z
+app.get('/:chunk', function(req, res, next) {
+	var chunk = req.params.chunk;
+
+	// I don't think Express has a way for me to only get URLs that start with
+	// an at sign, so we need to do it in the handler. If this URL does not
+	// start with an at sign, just continue on our merry way.
+	if (chunk.substring(0, 1) !== '@') {
+		next();
+		return;
+	}
+	var t = chunk.substring(1);
+	var time = moment.utc(t);
 
 	if (!time.isValid()) {
 		return next();
 	}
 
+	var canonicalRepresentation = time.format('YYYY[-]MM[-]DD[T]HH[:]mm[Z]');
+
+	if (t !== canonicalRepresentation) {
+		res.redirect(302, '/@' + canonicalRepresentation);
+		return;
+	}
+
 	var data = {
+		verb: 'was', // Maybe, if it's recent enough, use 'is'. Or in the future, use 'will be'.
 		buckets: getBuckets(time),
 		assetVersion: assetVersion,
+		twitterMeta: getTwitterMeta(time),
 		live: false,
 		gaCode: process.env.GA_CODE,
 		bitcoinAccount: process.env.BITCOIN_ACCOUNT
 	};
 
-	res.render('index', data);
+	res.render('time', data);
 });
 
 app.get('/t/:tweet', function(req, res, next) {
@@ -113,18 +142,12 @@ app.get('/t/:tweet', function(req, res, next) {
 			return next();
 		}
 
-		var twitterMeta = {
-			title: "It's 5 o'clock somewhere",
-			description: tweet(time, 200),
-			image: 'http://www.its5.info/assets/' + assetVersion + '/images/clocks/' + time.format('HHmm') + '-120x120.png'
-		};
-
 		var data = {
 			verb: 'was', // Maybe, if it's recent enough, use 'is'.
 			buckets: getBuckets(time),
 			tweet: oembed.html,
 			assetVersion: assetVersion,
-			twitterMeta: twitterMeta,
+			twitterMeta: getTwitterMeta(time),
 			userName: tweetData.user.screen_name,
 			userUrl: 'https://twitter.com/' + tweetData.user.screen_name,
 			live: false,
