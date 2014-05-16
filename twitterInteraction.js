@@ -72,7 +72,7 @@ TwitterInteraction.prototype.pump = function() {
 	var lastId = self.getLastTweetId();
 
 	return Q.all([urlLength, lastId]).spread(function(urlLength, lastId) {
-		var search = self.twitterApi.search('its 5 oclock somewhere', lastId);
+		var search = self.twitterApi.search('it\'s 5 o\'clock somewhere', lastId);
 		var found = search.then(function(data) {
 			var result = [];
 			data.statuses.forEach(function(tweetData) {
