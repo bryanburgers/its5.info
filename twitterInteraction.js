@@ -79,7 +79,7 @@ TwitterInteraction.prototype.pump = function() {
 				var createdAt = tweetData.created_at;
 				var id = tweetData.id_str;
 				var username = tweetData.user.screen_name;
-				var t = moment(createdAt);
+				var t = moment(createdAt, "ddd MMM DD HH:mm:ss ZZ YYYY");
 				var availableLength = 160 - (username.length + 2) - (urlLength + 1);
 				self._markId(id);
 

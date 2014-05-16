@@ -15,7 +15,7 @@
     "express": "^3.5.1",
     "hashdirectory": "^0.1.0",
     "lru-cache": "^2.5.0",
-    "moment-timezone": "0.0.3",
+    "moment-timezone": "0.0.6",
     "mustache-express": "^1.0.1",
     "q": "^1.0.1",
     "random-js": "^1.0.3",

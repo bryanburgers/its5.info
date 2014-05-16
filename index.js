@@ -103,7 +103,12 @@ app.get('/:chunk', function(req, res, next) {
 		return;
 	}
 	var t = chunk.substring(1);
-	var time = moment.utc(t);
+	try {
+		var time = moment.utc(t);
+	}
+	catch (exception) {
+		return next();
+	}
 
 	if (!time.isValid()) {
 		return next();
@@ -136,7 +141,7 @@ app.get('/t/:tweet', function(req, res, next) {
 	var oembedPromise = twitterApi.oembed(t);
 
 	Q.all([tweetPromise, oembedPromise]).spread(function(tweetData, oembed) {
-		var time = moment(tweetData.created_at);
+		var time = moment(tweetData.created_at, "ddd MMM DD HH:mm:ss ZZ YYYY");
 
 		if (!time.isValid()) {
 			return next();
