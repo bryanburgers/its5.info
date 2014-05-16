@@ -18,7 +18,7 @@ TwitterApi.prototype._get = function(uri, options) {
 	return Q.Promise(function(resolve, reject) {
 		self.twit.get(uri, options, function(result) {
 			if (result instanceof Error) {
-				reject(Error);
+				reject(result);
 				return;
 			}
 			resolve(result);
@@ -47,7 +47,7 @@ TwitterApi.prototype._post = function(uri, options) {
 	return Q.Promise(function(resolve, reject) {
 		self.twit.post(uri, options, function(result) {
 			if (result instanceof Error) {
-				reject(Error);
+				reject(result);
 				return;
 			}
 			resolve(result);
